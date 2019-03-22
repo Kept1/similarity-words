@@ -1,0 +1,114 @@
+#include "pch.h"
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	string Name1, Name2, Name3, Name4, Name5;
+	int ch12, ch13, ch14, ch15;
+	string zamena;
+	cin >> Name1 >> Name2 >> Name3 >> Name4 >> Name5;
+	//1
+	if (Name2.length > Name1.length) {
+		for (int i = 0; i <= Name2.length; i++) {
+			if (Name2[i] != Name1[i]) {
+				ch12++;
+			}
+		}
+	}
+	else
+	{
+		for (int i = 0; i <= Name1.length; i++) {
+			if (Name1[i] != Name2[i]) {
+				ch12++;
+			}
+		}
+	}
+	//1
+
+	//2
+	if (Name3.length > Name1.length) {
+		for (int i = 0; i <= Name3.length; i++) {
+			if (Name3[i] != Name1[i]) {
+				ch13++;
+			}
+		}
+	}
+	else
+	{
+		for (int i = 0; i <= Name1.length; i++) {
+			if (Name1[i] != Name3[i]) {
+				ch13++;
+			}
+		}
+	}
+	//2
+
+	//3		
+	if (Name4.length > Name1.length) {
+		for (int i = 0; i <= Name4.length; i++) {
+			if (Name4[i] != Name1[i]) {
+				ch14++;
+			}
+		}
+	}
+	else
+	{
+		for (int i = 0; i <= Name1.length; i++) {
+			if (Name1[i] != Name4[i]) {
+				ch14++;
+			}
+		}
+	}
+	//3
+
+	//4
+	if (Name5.length > Name1.length) {
+		for (int i = 0; i <= Name5.length; i++) {
+			if (Name5[i] != Name1[i]) {
+				ch15++;
+			}
+		}
+	}
+	else
+	{
+		for (int i = 0; i <= Name1.length; i++) {
+			if (Name1[i] != Name5[i]) {
+				ch15++;
+			}
+		}
+	}
+	//4
+	
+	if(ch12 < ch13){
+		zamena = Name2;
+		Name2 = Name3;
+		Name3 = zamena;
+	}
+	else if (ch12 < ch14) {
+		zamena = Name3;
+		Name2 = Name4;
+		Name4 = zamena;
+	}
+	else if (ch12 < ch15) {
+		zamena = Name2;
+		Name2 = Name5;
+		Name5 = zamena;
+	}
+	else if (ch13 < ch14) {
+		zamena = Name3;
+		Name3 = Name4;
+		Name4 = zamena;
+	}
+	else if (ch13 < ch15) {
+		zamena = Name3;
+		Name3 = Name5;
+		Name5 = zamena;
+	}
+	else if (ch14 < ch15) {
+		zamena = Name4;
+		Name4 = Name5;
+		Name5 = zamena;
+	}
+	cout << Name2 << Name3 << Name4 << Name5;
+}
